@@ -7,6 +7,7 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
+
     <TextView
         android:id="@+id/txView_notAlarm"
         android:gravity="center"
@@ -34,7 +35,7 @@
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:background="#91DDFF"
-            android:text="option"
+            android:text="opt"
             android:textColor="#455A64" />
 
     </LinearLayout>
@@ -42,8 +43,11 @@
     <ListView
         android:id="@+id/liView_alarm"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content">
 
-    <include layout="@layout/navigation"/>
+    </ListView>
+
+    <include layout="@layout/menu_bar"/>
+
 
 </LinearLayout>

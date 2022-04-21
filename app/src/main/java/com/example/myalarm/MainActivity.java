@@ -2,7 +2,9 @@ package com.example.myalarm;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -16,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     private Button btn_add;
     private Button btn_option;
     private ListView liView_alarm;
+    private Button btn_stopWatch;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +31,16 @@ public class MainActivity extends AppCompatActivity {
         btn_add = (Button) findViewById(R.id.btn_add);
         btn_option = (Button) findViewById(R.id.btn_option);
         liView_alarm = (ListView) findViewById(R.id.liView_alarm);
+        btn_stopWatch = (Button) findViewById(R.id.btn_stopWatch);
+
+        btn_stopWatch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, StopWatchActivity.class);
+                startActivity(intent);
+            }
+        });
+
 
 
 
