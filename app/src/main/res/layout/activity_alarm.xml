@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".AlarmActivity">
+
+    <TextView
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="360dp"
+        android:text="n시간 n분 뒤에 알람이 울립니다"/>
+
+    <LinearLayout
+        android:gravity="right"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:textColor="#000000"
+            android:background="#00FFFFFF"
+            android:id="@+id/btn_addAlarm"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:textSize="30dp"
+            android:text="+"/>
+
+        <Button
+            android:textColor="#000000"
+            android:background="#00FFFFFF"
+            android:id="@+id/btn_alarmOption"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:textSize="30dp"
+            android:text=":"/>
+
+    </LinearLayout>
+
+    <ListView
+        android:layout_gravity="bottom"
+        android:id="@+id/lv_alarm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <LinearLayout
+        android:id="@+id/lout_menuBar"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:background="#00FFFFFF"
+            android:textColor="#000000"
+            android:textSize="20dp"
+            android:layout_weight="1"
+            android:id="@+id/btn_alarm"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:text="Alarm"/>
+
+        <Button
+            android:background="#00FFFFFF"
+            android:textColor="#000000"
+            android:textSize="20dp"
+            android:layout_weight="1"
+            android:id="@+id/btn_stopWatch"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:text="Watch"/>
+
+        <Button
+            android:background="#00FFFFFF"
+            android:textColor="#000000"
+            android:textSize="20dp"
+            android:layout_weight="1"
+            android:id="@+id/btn_timer"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:text="Timer"/>
+
+    </LinearLayout>
+
+
+
+
+</LinearLayout>
