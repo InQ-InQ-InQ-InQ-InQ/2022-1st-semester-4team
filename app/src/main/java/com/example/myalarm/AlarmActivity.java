@@ -29,7 +29,7 @@ public class AlarmActivity extends AppCompatActivity {
         btn_add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                System.out.println("plz pull me");
             }
         });
 
