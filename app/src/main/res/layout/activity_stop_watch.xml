@@ -24,5 +24,42 @@
             android:text="opt"/>
 
     </LinearLayout>
+    <LinearLayout
+        android:id="@+id/lout_menuBar"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:background="#00FFFFFF"
+            android:textColor="#000000"
+            android:textSize="20dp"
+            android:layout_weight="1"
+            android:id="@+id/btn_alarm"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:text="Alarm"/>
+
+        <Button
+            android:background="#00FFFFFF"
+            android:textColor="#000000"
+            android:textSize="20dp"
+            android:layout_weight="1"
+            android:id="@+id/btn_stopWatch"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:text="Watch"/>
+
+        <Button
+            android:background="#00FFFFFF"
+            android:textColor="#000000"
+            android:textSize="20dp"
+            android:layout_weight="1"
+            android:id="@+id/btn_timer"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:text="Timer"/>
+
+    </LinearLayout>
 
 </LinearLayout>
