@@ -65,6 +65,90 @@ public class AddAlarmActivity extends AppCompatActivity {
             }
         });
 
+        btn_tue.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(!dayArray[1]) {
+                    dayArray[1] = true;
+                    btn_tue.setTextColor(myColor);
+                }
+                else {
+                    dayArray[1] = false;
+                    btn_tue.setTextColor(Color.BLACK);
+                }
+            }
+        });
+
+        btn_wed.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(!dayArray[2]) {
+                    dayArray[2] = true;
+                    btn_wed.setTextColor(myColor);
+                }
+                else {
+                    dayArray[2] = false;
+                    btn_wed.setTextColor(Color.BLACK);
+                }
+            }
+        });
+
+        btn_thu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(!dayArray[3]) {
+                    dayArray[3] = true;
+                    btn_thu.setTextColor(myColor);
+                }
+                else {
+                    dayArray[3] = false;
+                    btn_thu.setTextColor(Color.BLACK);
+                }
+            }
+        });
+
+        btn_fri.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(!dayArray[4]) {
+                    dayArray[4] = true;
+                    btn_fri.setTextColor(myColor);
+                }
+                else {
+                    dayArray[4] = false;
+                    btn_fri.setTextColor(Color.BLACK);
+                }
+            }
+        });
+
+        btn_sat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(!dayArray[5]) {
+                    dayArray[5] = true;
+                    btn_sat.setTextColor(myColor);
+                }
+                else {
+                    dayArray[5] = false;
+                    btn_sat.setTextColor(Color.BLACK);
+                }
+            }
+        });
+
+        btn_sun.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(!dayArray[6]) {
+                    dayArray[6] = true;
+                    btn_sun.setTextColor(myColor);
+                }
+                else {
+                    dayArray[6] = false;
+                    btn_sun.setTextColor(Color.BLACK);
+                }
+            }
+        });
+
         //create button
         btn_create = (Button) findViewById(R.id.btn_create);
         btn_create.setOnClickListener(new View.OnClickListener() {
@@ -74,7 +158,6 @@ public class AddAlarmActivity extends AppCompatActivity {
                 dayMod = true;
                 hour = 0;
                 minute = 0;
-                dayArray = new boolean[7];
                 name = "test";
                 sound = true;
                 vibe = true;
