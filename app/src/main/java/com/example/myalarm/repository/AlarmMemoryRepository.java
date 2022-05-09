@@ -1,7 +1,5 @@
 package com.example.myalarm.repository;
 
-import com.example.myalarm.Alarm;
-
 import java.util.ArrayList;
 import java.util.List;
 

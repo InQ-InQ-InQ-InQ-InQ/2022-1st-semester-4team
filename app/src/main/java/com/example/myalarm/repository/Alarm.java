@@ -1,4 +1,4 @@
-package com.example.myalarm;
+package com.example.myalarm.repository;
 
 public class Alarm {
     private boolean dateMod, dayMod;

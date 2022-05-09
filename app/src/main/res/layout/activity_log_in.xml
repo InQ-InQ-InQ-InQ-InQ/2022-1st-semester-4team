@@ -1,38 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     tools:context=".LogInActivity">
 
     <ImageView
+        android:src="@mipmap/ic_launcher_round"
+        android:id="@+id/iv_login_image"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         android:layout_width="match_parent"
         android:layout_height="400dp"/>
 
-    <EditText
-        android:id="@+id/et_id"
+    <LinearLayout
+        android:id="@+id/lout_id_password"
+        app:layout_constraintTop_toBottomOf="@id/iv_login_image"
+        app:layout_constraintRight_toRightOf="parent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Input Id or Email"/>
+        android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/et_password"
+        <EditText
+            android:id="@+id/et_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Input Id or Email"/>
+
+        <EditText
+            android:id="@+id/et_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Input Password"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lout_remember_forget"
+        app:layout_constraintTop_toBottomOf="@id/lout_id_password"
+        app:layout_constraintRight_toRightOf="parent"
+        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Input Password"/>
+        android:layout_height="wrap_content">
 
-    <Button
-        android:id="@+id/btn_signIn"
+        <Button
+            android:text="Remember?"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <Button
+            android:text="Forget Id?"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lout_signIn_signUp"
+        app:layout_constraintTop_toBottomOf="@id/lout_remember_forget"
+        app:layout_constraintRight_toRightOf="parent"
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Sign In"/>
+        android:layout_height="wrap_content">
 
-    <Button
-        android:id="@+id/btn_signUp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Sign Up"/>
+        <Button
+            android:id="@+id/btn_signIn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sign In"/>
 
-</LinearLayout>
+        <Button
+            android:id="@+id/btn_signUp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sign Up"/>
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
