@@ -7,10 +7,12 @@
     tools:context=".AlarmActivity">
 
     <TextView
+        app:layout_constraintHeight_percent="0.3"
         android:id="@+id/tv_next_alarm_viewer"
         android:layout_width="match_parent"
-        android:layout_height="260dp"
+        android:layout_height="0dp"
         android:gravity="center"
+        android:textSize="24dp"
         android:text="n시간 n분 뒤에 알람이 울립니다"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -44,7 +46,6 @@
     </LinearLayout>
 
     <ScrollView
-        android:background="#0000FF"
         android:id="@+id/scrollView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -55,14 +56,14 @@
         <LinearLayout
             android:background="#00FF00"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="800dp"
             android:orientation="vertical">
 
             <ListView
                 android:background="#FF0000"
                 android:id="@+id/lv_alarm"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="match_parent" />
 
 
         </LinearLayout>

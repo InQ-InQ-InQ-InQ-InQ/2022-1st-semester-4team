@@ -1,10 +1,12 @@
 package com.example.myalarm;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.ListAdapter;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -71,6 +73,10 @@ public class AlarmActivity extends AppCompatActivity {
         List<Alarm> list = repository.getAlarmList();
         ArrayAdapter<Alarm> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, list);
         liView_alarm.setAdapter(adapter);
+
+
+
+
 
 
 
