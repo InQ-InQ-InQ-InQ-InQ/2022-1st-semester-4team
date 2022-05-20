@@ -33,7 +33,7 @@
         app:layout_constraintTop_toBottomOf="@id/lout_option"
         app:layout_constraintBottom_toTopOf="@id/lout_record_start"
         app:layout_constraintRight_toRightOf="parent"
-        android:id="@+id/tv_stop_watch_viewer"
+        android:id="@+id/tv_stopwatch_viewer"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:gravity="center"
@@ -48,6 +48,7 @@
         android:layout_height="wrap_content">
 
         <Button
+            android:textSize="20dp"
             android:layout_margin="20dp"
             android:background="#00FFFFFF"
             android:textColor="#000000"
@@ -57,6 +58,8 @@
             android:text="RECORD"/>
 
         <Button
+            android:id="@+id/btn_stopWatch_start"
+            android:textSize="20dp"
             android:layout_margin="20dp"
             android:background="#00FFFFFF"
             android:textColor="#000000"
