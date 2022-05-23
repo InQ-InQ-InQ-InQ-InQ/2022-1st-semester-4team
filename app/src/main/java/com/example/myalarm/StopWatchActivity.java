@@ -1,35 +1,44 @@
 package com.example.myalarm;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.os.SystemClock;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Chronometer;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class StopWatchActivity extends AppCompatActivity {
 
     private TextView tv_stopwatch_viewer;
-    private Button btn_alarm;
-    private Button btn_timer;
-    private Button btn_stopwatch_start;
-    private Thread timeThread = null;
-    private Boolean isRunning = true;
+    private Button btn_alarm, btn_timer;
+    private Button btn_stopwatch_start, btn_stopwatch_record;
+
+    //status
+    public static final int INIT = 0;
+    public static final int RUN = 1;
+    public static final int PAUSE = 2;
+    public static int status = INIT;
+    private int cnt = 1;
+    private long baseTime,pauseTime;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_stop_watch);
 
+        tv_stopwatch_viewer = (TextView) findViewById(R.id.tv_stopwatch_viewer);
         btn_alarm = (Button) findViewById(R.id.btn_alarm);
         btn_timer = (Button) findViewById(R.id.btn_timer);
         btn_stopwatch_start = (Button) findViewById(R.id.btn_stopWatch_start);
-        tv_stopwatch_viewer = (TextView) findViewById(R.id.tv_stopwatch_viewer);
+        btn_stopwatch_record = (Button) findViewById(R.id.btn_stopWatch_record);
 
         btn_alarm.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,60 +58,72 @@ public class StopWatchActivity extends AppCompatActivity {
 
         btn_stopwatch_start.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                v.setVisibility(View.GONE);
-                Toast.makeText(StopWatchActivity.this, "1분 15초가 지났습니다.", Toast.LENGTH_SHORT).show();
-
-                timeThread = new Thread(new timeThread());
-                timeThread.start();
+            public void onClick(View view) {
+                view.setVisibility(View.GONE);
+                Toast.makeText(StopWatchActivity.this, "스톱워치를 시작합니다", Toast.LENGTH_SHORT).show();
+                staButton();
             }
         });
+
     }
 
-    @SuppressLint("HandlerLeak")
-    Handler handler = new Handler() {
-        @Override
-        public void handleMessage(Message msg) {
-            int mSec = msg.arg1 % 100;
-            int sec = (msg.arg1 / 100) % 60;
-            int min = (msg.arg1 / 100) / 60;
-            int hour = (msg.arg1 / 100) / 360;
-            //1000이 1초 1000*60 은 1분 1000*60*10은 10분 1000*60*60은 한시간
+    private void staButton(){
+        switch (status){
+            case INIT:
+                //어플리케이션이 실행되고 나서 실제로 경과된 시간...
+                baseTime = SystemClock.elapsedRealtime();
+                System.out.println("1234");
+                //핸들러 실행
+                handler.sendEmptyMessage(0);
+                btn_stopwatch_start.setText("멈춤");
+                //btn_stopwatch_record.setEnabled(true);
 
-            @SuppressLint("DefaultLocale") String result = String.format("%02d:%02d:%02d:%02d", hour, min, sec, mSec);
-            if (result.equals("00:01:15:00")) {
-                Toast.makeText(StopWatchActivity.this, "1분 15초가 지났습니다.", Toast.LENGTH_SHORT).show();
-            }
-            //mTimeTextView.setText(result);
+                //상태 변환
+                status = RUN;
+                break;
+            case RUN:
+                //핸들러 정지
+                handler.removeMessages(0);
+
+                //정지 시간 체크
+                pauseTime = SystemClock.elapsedRealtime();
+
+                btn_stopwatch_start.setText("시작");
+                btn_stopwatch_record.setText("리셋");
+
+                //상태변환
+                status = PAUSE;
+                break;
+            case PAUSE:
+                long reStart = SystemClock.elapsedRealtime();
+                baseTime += (reStart - pauseTime);
+
+                handler.sendEmptyMessage(0);
+
+                btn_stopwatch_start.setText("멈춤");
+                btn_stopwatch_record.setText("기록");
+
+                status = RUN;
+        }
+
+    }
+
+    @NonNull
+    private String getTime(){
+        long nowTime = SystemClock.elapsedRealtime();
+        long overTime = nowTime - baseTime;
+        long m = overTime/1000/60;
+        long s = (overTime/1000)%60;
+        long ms = overTime % 1000;
+        String recTime = String.format("%02d:%02d:%03d",m,s,ms);
+        return recTime;
+    }
+    Handler handler = new Handler(){
+
+        @Override
+        public void handleMessage(@NonNull Message msg) {
+            tv_stopwatch_viewer.setText(getTime());
+            handler.sendEmptyMessage(0);
         }
     };
-
-    public class timeThread implements Runnable {
-        @Override
-        public void run() {
-            int i = 0;
-
-            while (true) {
-                while (isRunning) { //일시정지를 누르면 멈춤
-                    Message msg = new Message();
-                    msg.arg1 = i++;
-                    handler.sendMessage(msg);
-
-                    try {
-                        Thread.sleep(10);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                        runOnUiThread(new Runnable(){
-                            @Override
-                            public void run() {
-                                tv_stopwatch_viewer.setText("");
-                                tv_stopwatch_viewer.setText("00:00:00:00");
-                            }
-                        });
-                        return; // 인터럽트 받을 경우 return
-                    }
-                }
-            }
-        }
-    }
 }
