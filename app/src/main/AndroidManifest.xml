@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+<<<<<<< HEAD
     xmlns:tools="http://schemas.android.com/tools">
+=======
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.myalarm">
+>>>>>>> c2ddd9776bf133f6e74fbc680a35cd7c06104f0e
 
     <application
         android:allowBackup="true"
@@ -20,11 +25,15 @@
             android:exported="false" />
         <activity
             android:name=".StopWatchActivity"
+<<<<<<< HEAD
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+=======
+            android:exported="false" >
+>>>>>>> c2ddd9776bf133f6e74fbc680a35cd7c06104f0e
         </activity>
         <activity
             android:name=".AlarmActivity"
@@ -35,6 +44,10 @@
             tools:ignore="DuplicateActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+<<<<<<< HEAD
+=======
+                <category android:name="android.intent.category.LAUNCHER" />
+>>>>>>> c2ddd9776bf133f6e74fbc680a35cd7c06104f0e
             </intent-filter>
         </activity>
     </application>

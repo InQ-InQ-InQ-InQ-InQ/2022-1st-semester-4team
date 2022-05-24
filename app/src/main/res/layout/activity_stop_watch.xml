@@ -31,14 +31,35 @@
 
     <TextView
         app:layout_constraintTop_toBottomOf="@id/lout_option"
+<<<<<<< HEAD
         app:layout_constraintBottom_toTopOf="@id/lout_record_start"
+=======
+        app:layout_constraintBottom_toTopOf="@id/tv_record_viewer"
+>>>>>>> c2ddd9776bf133f6e74fbc680a35cd7c06104f0e
         app:layout_constraintRight_toRightOf="parent"
         android:id="@+id/tv_stopwatch_viewer"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:gravity="center"
         android:text="00:00:00"
+<<<<<<< HEAD
         android:textSize="40dp"/>
+=======
+        android:textSize="56dp"
+        android:layout_marginBottom="40dp"/>
+
+    <TextView
+        android:textSize="24dp"
+        android:layout_marginTop="-80dp"
+        app:layout_constraintTop_toBottomOf="@id/tv_stopwatch_viewer"
+        app:layout_constraintBottom_toTopOf="@id/lout_record_start"
+        app:layout_constraintRight_toRightOf="parent"
+        android:id="@+id/tv_record_viewer"
+        app:layout_constraintHeight_percent="0.5"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:gravity="center_horizontal" />
+>>>>>>> c2ddd9776bf133f6e74fbc680a35cd7c06104f0e
 
     <LinearLayout
         android:id="@+id/lout_record_start"
@@ -48,10 +69,17 @@
         android:layout_height="wrap_content">
 
         <Button
+<<<<<<< HEAD
             android:id="@+id/btn_stopWatch_record"
             android:textSize="20dp"
             android:layout_margin="20dp"
             android:background="#00FFFFFF"
+=======
+            android:id="@+id/btn_record_init"
+            android:textSize="20dp"
+            android:layout_margin="28dp"
+            android:background="@drawable/btn_gray"
+>>>>>>> c2ddd9776bf133f6e74fbc680a35cd7c06104f0e
             android:textColor="#000000"
             android:layout_weight="1"
             android:layout_width="80dp"
@@ -59,11 +87,19 @@
             android:text="RECORD"/>
 
         <Button
+<<<<<<< HEAD
             android:id="@+id/btn_stopWatch_start"
             android:textSize="20dp"
             android:layout_margin="20dp"
             android:background="#00FFFFFF"
             android:textColor="#000000"
+=======
+            android:id="@+id/btn_start_pause_resume"
+            android:textSize="20dp"
+            android:layout_margin="28dp"
+            android:background="@drawable/btn_blue"
+            android:textColor="#FFFFFF"
+>>>>>>> c2ddd9776bf133f6e74fbc680a35cd7c06104f0e
             android:layout_weight="1"
             android:layout_width="80dp"
             android:layout_height="wrap_content"
