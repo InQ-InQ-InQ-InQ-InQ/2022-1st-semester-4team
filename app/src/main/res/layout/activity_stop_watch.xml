@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".StopWatchActivity">
+
+    <LinearLayout
+        android:id="@+id/lout_option"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:gravity="right"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:textColor="#000000"
+            android:background="#00FFFFFF"
+            android:id="@+id/btn_alarmOption"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:textSize="30dp"
+            android:text=":"/>
+
+    </LinearLayout>
+
+
+
+
+    <TextView
+        app:layout_constraintTop_toBottomOf="@id/lout_option"
+        app:layout_constraintBottom_toTopOf="@id/lout_record_start"
+        app:layout_constraintRight_toRightOf="parent"
+        android:id="@+id/tv_stopwatch_viewer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:text="00:00:00"
+        android:textSize="40dp"/>
+
+    <LinearLayout
+        android:id="@+id/lout_record_start"
+        app:layout_constraintBottom_toTopOf="@+id/lout_menuBar"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/btn_stopWatch_record"
+            android:textSize="20dp"
+            android:layout_margin="20dp"
+            android:background="#00FFFFFF"
+            android:textColor="#000000"
+            android:layout_weight="1"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:text="RECORD"/>
+
+        <Button
+            android:id="@+id/btn_stopWatch_start"
+            android:textSize="20dp"
+            android:layout_margin="20dp"
+            android:background="#00FFFFFF"
+            android:textColor="#000000"
+            android:layout_weight="1"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:text="START"/>
+    </LinearLayout>
+
+
+    <LinearLayout
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:id="@+id/lout_menuBar"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:background="#00FFFFFF"
+            android:textColor="#000000"
+            android:textSize="20dp"
+            android:layout_weight="1"
+            android:id="@+id/btn_alarm"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:text="Alarm"/>
+
+        <Button
+            android:background="#00FFFFFF"
+            android:textColor="#000000"
+            android:textSize="20dp"
+            android:layout_weight="1"
+            android:id="@+id/btn_stopWatch"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:text="Watch"/>
+
+        <Button
+            android:background="#00FFFFFF"
+            android:textColor="#000000"
+            android:textSize="20dp"
+            android:layout_weight="1"
+            android:id="@+id/btn_timer"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:text="Timer"/>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

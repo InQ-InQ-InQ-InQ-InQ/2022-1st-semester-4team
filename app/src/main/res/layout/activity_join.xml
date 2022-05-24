@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    tools:context=".JoinActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:background="@drawable/border_bottom_black"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:id="@+id/cout_back_join"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal">
+
+        <Button
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/cout_back_join"
+            app:layout_constraintBottom_toBottomOf="@+id/cout_back_join"
+            android:textColor="#000000"
+            android:textSize="30sp"
+            android:text="B"
+            android:background="#00FFFFFF"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/cout_back_join"
+            app:layout_constraintBottom_toBottomOf="@+id/cout_back_join"
+            android:gravity="right"
+            android:layout_gravity="right"
+            android:textSize="30dp"
+            android:textColor="#000000"
+            android:text="회원가입"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ScrollView
+        app:layout_constraintTop_toBottomOf="@+id/cout_back_join"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/sv_join"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+
+        <LinearLayout
+            android:padding="20dp"
+            android:paddingRight="20dp"
+            android:orientation="vertical"
+            android:id="@+id/lout_join_in_sv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_margin="10dp"
+                android:background="#FFFFFF"
+                android:orientation="vertical"
+                android:id="@+id/lout_join_id_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="*아이디를 입력하세요"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+                <EditText
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="15dp"
+                    android:hint="6~16 영소문자, 숫자"
+                    android:layout_width="match_parent"
+                    android:backgroundTint="@color/black"
+                    android:layout_height="58dp"/>
+                <TextView
+                    android:text="*비밀번호를 입력하세요"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+                <EditText
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="15dp"
+                    android:hint="비밀번호를 입력하세요"
+                    android:backgroundTint="@color/black"
+                    android:layout_width="match_parent"
+                    android:layout_height="58dp"/>
+                <TextView
+                    android:text="*비밀번호를 확인하세요"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+                <EditText
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="15dp"
+                    android:hint="비밀번호를 입력하세요"
+                    android:backgroundTint="@color/black"
+                    android:layout_width="match_parent"
+                    android:layout_height="58dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:background="#FFFFFF"
+                android:layout_margin="10dp"
+                android:orientation="vertical"
+                android:id="@+id/lout_join_name_etc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="*이름을 입력하세요"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+                <EditText
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="15dp"
+                    android:backgroundTint="@color/black"
+                    android:hint="6~16 영소문자, 한글, 숫자, 특수문자"
+                    android:layout_width="match_parent"
+                    android:layout_height="58dp"/>
+                <TextView
+                    android:text="*비밀번호를 입력하세요"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+                <EditText
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="15dp"
+                    android:backgroundTint="@color/black"
+                    android:hint="비밀번호를 입력하세요"
+                    android:layout_width="match_parent"
+                    android:layout_height="58dp"/>
+                <TextView
+                    android:text="*비밀번호를 확인하세요"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+                <EditText
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="15dp"
+                    android:backgroundTint="@color/black"
+                    android:hint="비밀번호를 입력하세요"
+                    android:layout_width="match_parent"
+                    android:layout_height="58dp"/>
+
+            </LinearLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/lout_join"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:textColor="@color/white"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:background="@drawable/btn_blue"
+                    android:text="회원가입"
+                    android:id="@+id/btn_join"
+                    app:layout_constraintWidth_percent="0.8"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+
+
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
