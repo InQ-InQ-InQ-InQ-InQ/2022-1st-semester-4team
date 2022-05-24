@@ -22,27 +22,15 @@ android {
         }
     }
     compileOptions {
-<<<<<<< HEAD
-        sourceCompatibility JavaVersion.VERSION_11
-        targetCompatibility JavaVersion.VERSION_11
-    }
-    namespace 'com.example.myalarm'
-=======
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
->>>>>>> c2ddd9776bf133f6e74fbc680a35cd7c06104f0e
 }
 
 dependencies {
     implementation 'androidx.appcompat:appcompat:1.4.1'
-<<<<<<< HEAD
-    implementation 'com.google.android.material:material:1.6.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
-=======
     implementation 'com.google.android.material:material:1.5.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.3'
->>>>>>> c2ddd9776bf133f6e74fbc680a35cd7c06104f0e
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'

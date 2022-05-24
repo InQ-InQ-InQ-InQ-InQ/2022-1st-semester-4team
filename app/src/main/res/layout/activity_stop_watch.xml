@@ -31,37 +31,115 @@
 
     <TextView
         app:layout_constraintTop_toBottomOf="@id/lout_option"
-<<<<<<< HEAD
-        app:layout_constraintBottom_toTopOf="@id/lout_record_start"
-=======
-        app:layout_constraintBottom_toTopOf="@id/tv_record_viewer"
->>>>>>> c2ddd9776bf133f6e74fbc680a35cd7c06104f0e
+        app:layout_constraintBottom_toTopOf="@id/lout_record_viewer_top"
         app:layout_constraintRight_toRightOf="parent"
         android:id="@+id/tv_stopwatch_viewer"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:gravity="center"
         android:text="00:00:00"
-<<<<<<< HEAD
-        android:textSize="40dp"/>
-=======
         android:textSize="56dp"
-        android:layout_marginBottom="40dp"/>
+        android:layout_marginBottom="20dp"/>
 
-    <TextView
+    <LinearLayout
+        android:background="@drawable/border_bottom_black_thin"
+        android:layout_marginRight="52dp"
+        android:layout_marginLeft="52dp"
+        android:paddingBottom="10dp"
         android:textSize="24dp"
-        android:layout_marginTop="-80dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/tv_stopwatch_viewer"
+        app:layout_constraintBottom_toTopOf="@id/lout_record_viewer_bottom"
+        app:layout_constraintRight_toRightOf="parent"
+        android:id="@+id/lout_record_viewer_top"
+        app:layout_constraintHeight_percent="0.05"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_weight="2"
+            android:id="@+id/lout_interval_top"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="구간"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_weight="3"
+            android:id="@+id/lout_split_record_top"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="구간 기록"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_weight="3"
+            android:id="@+id/lout_course_record_top"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="전체 시간"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:background="#00FFFFFF"
+        android:layout_marginRight="52dp"
+        android:layout_marginLeft="52dp"
+        android:textSize="24dp"
+        android:orientation="horizontal"
         app:layout_constraintTop_toBottomOf="@id/tv_stopwatch_viewer"
         app:layout_constraintBottom_toTopOf="@id/lout_record_start"
         app:layout_constraintRight_toRightOf="parent"
-        android:id="@+id/tv_record_viewer"
-        app:layout_constraintHeight_percent="0.5"
+        android:id="@+id/lout_record_viewer_bottom"
+        app:layout_constraintHeight_percent="0.45"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:gravity="center_horizontal" />
->>>>>>> c2ddd9776bf133f6e74fbc680a35cd7c06104f0e
+        android:layout_height="0dp">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_weight="2"
+            android:id="@+id/lout_interval"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_weight="3"
+            android:id="@+id/lout_split_record"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_weight="3"
+            android:id="@+id/lout_course_record"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+        </LinearLayout>
+
+    </LinearLayout>
+
 
     <LinearLayout
+        android:layout_marginBottom="20dp"
         android:id="@+id/lout_record_start"
         app:layout_constraintBottom_toTopOf="@+id/lout_menuBar"
         app:layout_constraintRight_toRightOf="parent"
@@ -69,17 +147,11 @@
         android:layout_height="wrap_content">
 
         <Button
-<<<<<<< HEAD
-            android:id="@+id/btn_stopWatch_record"
-            android:textSize="20dp"
-            android:layout_margin="20dp"
-            android:background="#00FFFFFF"
-=======
             android:id="@+id/btn_record_init"
             android:textSize="20dp"
-            android:layout_margin="28dp"
+            android:layout_marginLeft="52dp"
+            android:layout_marginRight="20dp"
             android:background="@drawable/btn_gray"
->>>>>>> c2ddd9776bf133f6e74fbc680a35cd7c06104f0e
             android:textColor="#000000"
             android:layout_weight="1"
             android:layout_width="80dp"
@@ -87,19 +159,12 @@
             android:text="RECORD"/>
 
         <Button
-<<<<<<< HEAD
-            android:id="@+id/btn_stopWatch_start"
-            android:textSize="20dp"
-            android:layout_margin="20dp"
-            android:background="#00FFFFFF"
-            android:textColor="#000000"
-=======
             android:id="@+id/btn_start_pause_resume"
             android:textSize="20dp"
-            android:layout_margin="28dp"
+            android:layout_marginRight="52dp"
+            android:layout_marginLeft="20dp"
             android:background="@drawable/btn_blue"
             android:textColor="#FFFFFF"
->>>>>>> c2ddd9776bf133f6e74fbc680a35cd7c06104f0e
             android:layout_weight="1"
             android:layout_width="80dp"
             android:layout_height="wrap_content"
