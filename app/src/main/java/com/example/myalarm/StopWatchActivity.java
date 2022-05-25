@@ -2,6 +2,8 @@ package com.example.myalarm;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.drawerlayout.widget.DrawerLayout;
+
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -25,6 +27,9 @@ public class StopWatchActivity extends AppCompatActivity {
     private Button btn_alarm, btn_timer;
     private Button btn_start_pause_resume, btn_record_init;
     private LinearLayout lout_record_viewer_bottom, lout_record_viewer_top;
+    private Button btn_stopwatch_option;
+    private DrawerLayout drawerLayout;
+    private View drawerView;
 
     //status
     public static final int INIT = 0;
@@ -43,19 +48,23 @@ public class StopWatchActivity extends AppCompatActivity {
         setContentView(R.layout.activity_stop_watch);
 
         interval = 1;
+        btn_alarm = (Button) findViewById(R.id.btn_alarm);
+        btn_timer = (Button) findViewById(R.id.btn_timer);
+        btn_stopwatch_option = (Button) findViewById(R.id.btn_stopWatch_option) ;
+        btn_start_pause_resume = (Button) findViewById(R.id.btn_start_pause_resume);
+        btn_record_init = (Button) findViewById(R.id.btn_record_init);
+        drawerLayout = (DrawerLayout) findViewById(R.id.dlout_stopwatch);
+        drawerView = (View) findViewById(R.id.drawerView);
+        lout_record_viewer_top = (LinearLayout) findViewById(R.id.lout_record_viewer_top);
+        lout_record_viewer_bottom = (LinearLayout) findViewById(R.id.lout_record_viewer_bottom);
+        lout_record_viewer_top.setVisibility(View.GONE);
         sv_record_viewer_bottom = (ScrollView) findViewById(R.id.sv_record_viewer_bottom);
+        sv_record_viewer_bottom.setVisibility(View.GONE);
         tv_interval = (TextView) findViewById(R.id.tv_interval);
         tv_interval_record = (TextView) findViewById(R.id.tv_interval_record);
         tv_course_record = (TextView) findViewById(R.id.tv_course_record);
         tv_stopwatch_viewer = (TextView) findViewById(R.id.tv_stopwatch_viewer);
-        btn_alarm = (Button) findViewById(R.id.btn_alarm);
-        btn_timer = (Button) findViewById(R.id.btn_timer);
-        btn_start_pause_resume = (Button) findViewById(R.id.btn_start_pause_resume);
-        btn_record_init = (Button) findViewById(R.id.btn_record_init);
-        lout_record_viewer_top = (LinearLayout) findViewById(R.id.lout_record_viewer_top);
-        lout_record_viewer_bottom = (LinearLayout) findViewById(R.id.lout_record_viewer_bottom);
-        lout_record_viewer_top.setVisibility(View.GONE);
-        sv_record_viewer_bottom.setVisibility(View.GONE);
+
 
 
         /*
@@ -93,6 +102,15 @@ public class StopWatchActivity extends AppCompatActivity {
                 record_init();
             }
         });
+
+        btn_stopwatch_option.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                drawerLayout.openDrawer(drawerView);
+            }
+        });
+
+        drawerLayout.setDrawerListener(listener);
 
     }
 
@@ -219,6 +237,28 @@ public class StopWatchActivity extends AppCompatActivity {
         public void handleMessage(@NonNull Message msg) {
             tv_stopwatch_viewer.setText(getTime());
             handler.sendEmptyMessage(0);
+        }
+    };
+
+    DrawerLayout.DrawerListener listener = new DrawerLayout.DrawerListener() {
+        @Override
+        public void onDrawerSlide(@NonNull View drawerView, float slideOffset) {
+
+        }
+
+        @Override
+        public void onDrawerOpened(@NonNull View drawerView) {
+
+        }
+
+        @Override
+        public void onDrawerClosed(@NonNull View drawerView) {
+
+        }
+
+        @Override
+        public void onDrawerStateChanged(int newState) {
+
         }
     };
 }
