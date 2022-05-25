@@ -14,6 +14,8 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.StringTokenizer;
+
 public class StopWatchActivity extends AppCompatActivity {
 
     private TextView tv_stopwatch_viewer;
@@ -121,21 +123,65 @@ public class StopWatchActivity extends AppCompatActivity {
     private void record_init() {
         switch (status) {
             case RUN:
+                //set record viewer visible
                 sv_record_viewer_bottom.setVisibility(View.VISIBLE);
                 lout_record_viewer_top.setVisibility(View.VISIBLE);
-                String timeList = tv_course_record.getText().toString();
-                timeList = String.format("%s\n\n",getTime()) + timeList;
-                tv_course_record.setText(timeList);
-                cnt++;
+
+                //set interval
                 String intervalList = tv_interval.getText().toString();
                 intervalList = interval+"\n\n"+intervalList;
                 tv_interval.setText(intervalList);
                 interval++;
+
+                //set course record
+                String courseRecordList = tv_course_record.getText().toString();
+                courseRecordList = String.format("%s\n\n",getTime()) + courseRecordList;
+                tv_course_record.setText(courseRecordList);
+                cnt++;
+
+                //set interval record
+                StringTokenizer st;
+                String intervalRecordList = tv_interval_record.getText().toString();
+                String LatestInterval = "";
+                if(courseRecordList.length()>12) {
+                    LatestInterval = courseRecordList.substring(10,18);
+                    System.out.println(LatestInterval);
+                }
+                else {
+                    LatestInterval = courseRecordList.substring(0, 8);
+                }
+                //Toast.makeText(StopWatchActivity.this, LatestInterval, Toast.LENGTH_SHORT).show();
+                String currentRecord = courseRecordList.substring(0, 8);
+                if(LatestInterval.equals(currentRecord)) {
+                    LatestInterval = "00:00:00";
+                }
+
+                st = new StringTokenizer(currentRecord, ":");
+                long CMM = Integer.parseInt(st.nextToken());
+                long CSS = Integer.parseInt(st.nextToken());
+                long CMS = Integer.parseInt(st.nextToken());
+                st = new StringTokenizer(LatestInterval, ":");
+                long LMM = Integer.parseInt(st.nextToken());
+                long LSS = Integer.parseInt(st.nextToken());
+                long LMS = Integer.parseInt(st.nextToken());
+                long DMM = CMM - LMM;
+                long DSS = CSS - LSS;
+                long DMS = CMS - LMS;
+                if(DMS < 0) {
+                    DMS += 100;
+                    DSS--;
+                }
+                if(DSS < 0) {
+                    DSS += 60;
+                    DMM--;
+                }
+                String intervalRecord = String.format("%02d:%02d:%02d",DMM,DSS,DMS);
+                tv_interval_record.setText(intervalRecord+"\n\n"+intervalRecordList);
                 break;
+
             case PAUSE:
                 Toast.makeText(StopWatchActivity.this, "RESET", Toast.LENGTH_SHORT).show();
                 tv_stopwatch_viewer.setText("00:00:00");
-                //record.setText("");
                 baseTime = 0;
                 pauseTime = 0;
                 cnt = 1;
