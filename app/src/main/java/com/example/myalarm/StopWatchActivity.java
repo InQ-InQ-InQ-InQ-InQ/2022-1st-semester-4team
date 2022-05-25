@@ -3,6 +3,7 @@ package com.example.myalarm;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -57,7 +58,7 @@ public class StopWatchActivity extends AppCompatActivity {
         sv_record_viewer_bottom.setVisibility(View.GONE);
 
 
-        //clickLister
+        /*
         btn_alarm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -73,12 +74,14 @@ public class StopWatchActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        */
 
         btn_start_pause_resume.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                btn_start_pause_resume.setText("PAUSE");
+                btn_start_pause_resume.setText("중지");
                 btn_start_pause_resume.setBackgroundResource(R.drawable.btn_red);
+                btn_record_init.setTextColor(Color.parseColor("#000000"));
                 //Toast.makeText(StopWatchActivity.this, "스톱워치를 시작합니다", Toast.LENGTH_SHORT).show();
                 start_pause_resume();
             }
@@ -98,23 +101,23 @@ public class StopWatchActivity extends AppCompatActivity {
             case INIT:
                 baseTime = SystemClock.elapsedRealtime();
                 handler.sendEmptyMessage(0);
-                btn_start_pause_resume.setText("PAUSE");
+                btn_start_pause_resume.setText("중지");
                 status = RUN;
                 break;
             case RUN:
                 handler.removeMessages(0);
                 pauseTime = SystemClock.elapsedRealtime();
-                btn_start_pause_resume.setText("RESUME");
+                btn_start_pause_resume.setText("계속");
                 btn_start_pause_resume.setBackgroundResource(R.drawable.btn_blue);
-                btn_record_init.setText("RESET");
+                btn_record_init.setText("초기화");
                 status = PAUSE;
                 break;
             case PAUSE:
                 long reStart = SystemClock.elapsedRealtime();
                 baseTime += (reStart - pauseTime);
                 handler.sendEmptyMessage(0);
-                btn_start_pause_resume.setText("PAUSE");
-                btn_record_init.setText("RECORD");
+                btn_start_pause_resume.setText("중지");
+                btn_record_init.setText("구간 기록");
                 status = RUN;
         }
 
@@ -180,16 +183,17 @@ public class StopWatchActivity extends AppCompatActivity {
                 break;
 
             case PAUSE:
-                Toast.makeText(StopWatchActivity.this, "RESET", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(StopWatchActivity.this, "RESET", Toast.LENGTH_SHORT).show();
                 tv_stopwatch_viewer.setText("00:00:00");
                 baseTime = 0;
                 pauseTime = 0;
                 cnt = 1;
                 interval = 1;
                 status = INIT;
-                btn_record_init.setText("RECORD");
-                btn_start_pause_resume.setText("START");
+                btn_record_init.setText("구간 기록");
+                btn_start_pause_resume.setText("시작");
                 btn_start_pause_resume.setBackgroundResource(R.drawable.btn_blue);
+                btn_record_init.setTextColor(Color.parseColor("#6C6C6C"));
                 sv_record_viewer_bottom.setVisibility(View.GONE);
                 lout_record_viewer_top.setVisibility(View.GONE);
                 tv_course_record.setText("");

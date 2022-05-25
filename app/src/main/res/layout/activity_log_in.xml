@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
     tools:context=".LogInActivity">
 
     <ImageView
@@ -95,7 +94,8 @@
             android:id="@+id/btn_signIn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="LOGIN"/>
+            android:text="LOGIN"
+            style="?android:attr/borderlessButtonStyle" />
     </LinearLayout>
 
     <LinearLayout
@@ -114,8 +114,8 @@
             android:id="@+id/btn_signUp"
             android:background="#00000000"
             android:textColor="#373737"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
             android:text="회원가입"
             android:layout_weight="1"
             android:layout_width="0dp"
@@ -125,8 +125,8 @@
             android:id="@+id/btn_forgetId"
             android:background="#00000000"
             android:textColor="#373737"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
             android:text="아이디 찾기"
             android:layout_weight="1"
             android:layout_width="0dp"
@@ -136,8 +136,8 @@
             android:id="@+id/btn_forgetPassword"
             android:background="#00000000"
             android:textColor="#373737"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
             android:text="비밀번호 찾기"
             android:layout_weight="1"
             android:layout_width="0dp"

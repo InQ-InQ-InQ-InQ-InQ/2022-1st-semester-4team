@@ -38,7 +38,7 @@ public class LogInActivity extends AppCompatActivity {
                 if(et_id.getText().toString().equals("myAlarm")) {
                     Toast.makeText(getApplicationContext(), "hello world", Toast.LENGTH_SHORT).show();
                 }
-                Intent intent = new Intent(LogInActivity.this, AlarmActivity.class);
+                Intent intent = new Intent(LogInActivity.this, StopWatchActivity.class);
                 startActivity(intent);
             }
         });
