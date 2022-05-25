@@ -10,12 +10,15 @@ import android.os.SystemClock;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class StopWatchActivity extends AppCompatActivity {
 
     private TextView tv_stopwatch_viewer;
+    private TextView tv_interval, tv_interval_record, tv_course_record;
+    private ScrollView sv_record_viewer_bottom;
     private Button btn_alarm, btn_timer;
     private Button btn_start_pause_resume, btn_record_init;
     private LinearLayout lout_record_viewer_bottom, lout_record_viewer_top;
@@ -27,6 +30,7 @@ public class StopWatchActivity extends AppCompatActivity {
     public static int status = INIT;
     private int cnt = 1;
     private long baseTime,pauseTime;
+    private long interval;
 
 
 
@@ -35,6 +39,11 @@ public class StopWatchActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_stop_watch);
 
+        interval = 1;
+        sv_record_viewer_bottom = (ScrollView) findViewById(R.id.sv_record_viewer_bottom);
+        tv_interval = (TextView) findViewById(R.id.tv_interval);
+        tv_interval_record = (TextView) findViewById(R.id.tv_interval_record);
+        tv_course_record = (TextView) findViewById(R.id.tv_course_record);
         tv_stopwatch_viewer = (TextView) findViewById(R.id.tv_stopwatch_viewer);
         btn_alarm = (Button) findViewById(R.id.btn_alarm);
         btn_timer = (Button) findViewById(R.id.btn_timer);
@@ -43,7 +52,7 @@ public class StopWatchActivity extends AppCompatActivity {
         lout_record_viewer_top = (LinearLayout) findViewById(R.id.lout_record_viewer_top);
         lout_record_viewer_bottom = (LinearLayout) findViewById(R.id.lout_record_viewer_bottom);
         lout_record_viewer_top.setVisibility(View.GONE);
-        lout_record_viewer_bottom.setVisibility(View.GONE);
+        sv_record_viewer_bottom.setVisibility(View.GONE);
 
 
         //clickLister
@@ -94,6 +103,7 @@ public class StopWatchActivity extends AppCompatActivity {
                 handler.removeMessages(0);
                 pauseTime = SystemClock.elapsedRealtime();
                 btn_start_pause_resume.setText("RESUME");
+                btn_start_pause_resume.setBackgroundResource(R.drawable.btn_blue);
                 btn_record_init.setText("RESET");
                 status = PAUSE;
                 break;
@@ -111,12 +121,16 @@ public class StopWatchActivity extends AppCompatActivity {
     private void record_init() {
         switch (status) {
             case RUN:
-                lout_record_viewer_bottom.setVisibility(View.VISIBLE);
+                sv_record_viewer_bottom.setVisibility(View.VISIBLE);
                 lout_record_viewer_top.setVisibility(View.VISIBLE);
-                //String timeList = lout_record_viewer.getText().toString();
-                //timeList+= String.format("%2d. %s\n",cnt,getTime());
-                //lout_record_viewer.setText(timeList);
+                String timeList = tv_course_record.getText().toString();
+                timeList = String.format("%s\n\n",getTime()) + timeList;
+                tv_course_record.setText(timeList);
                 cnt++;
+                String intervalList = tv_interval.getText().toString();
+                intervalList = interval+"\n\n"+intervalList;
+                tv_interval.setText(intervalList);
+                interval++;
                 break;
             case PAUSE:
                 Toast.makeText(StopWatchActivity.this, "RESET", Toast.LENGTH_SHORT).show();
@@ -125,13 +139,16 @@ public class StopWatchActivity extends AppCompatActivity {
                 baseTime = 0;
                 pauseTime = 0;
                 cnt = 1;
+                interval = 1;
                 status = INIT;
                 btn_record_init.setText("RECORD");
                 btn_start_pause_resume.setText("START");
                 btn_start_pause_resume.setBackgroundResource(R.drawable.btn_blue);
-                lout_record_viewer_bottom.setVisibility(View.GONE);
+                sv_record_viewer_bottom.setVisibility(View.GONE);
                 lout_record_viewer_top.setVisibility(View.GONE);
-                //lout_record_viewer.setText("");
+                tv_course_record.setText("");
+                tv_interval.setText("");
+                tv_interval_record.setText("");
                 break;
         }
     }
@@ -146,6 +163,7 @@ public class StopWatchActivity extends AppCompatActivity {
         String recTime = String.format("%02d:%02d:%02d",m,s,ms);
         return recTime;
     }
+
     Handler handler = new Handler(){
         @Override
         public void handleMessage(@NonNull Message msg) {
