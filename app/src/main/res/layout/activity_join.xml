@@ -17,15 +17,15 @@
         android:orientation="horizontal">
 
         <Button
+            android:layout_width="36dp"
+            android:layout_height="28dp"
+            android:layout_marginLeft="6dp"
+            android:background="@drawable/back"
+            android:textColor="#000000"
+            app:layout_constraintBottom_toBottomOf="@+id/cout_back_join"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="@+id/cout_back_join"
-            app:layout_constraintBottom_toBottomOf="@+id/cout_back_join"
-            android:textColor="#000000"
-            android:textSize="30sp"
-            android:text="B"
-            android:background="#00FFFFFF"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
         <TextView
             android:textStyle="bold"
@@ -35,7 +35,7 @@
             app:layout_constraintBottom_toBottomOf="@+id/cout_back_join"
             android:gravity="right"
             android:layout_gravity="right"
-            android:textSize="30dp"
+            android:textSize="24dp"
             android:textColor="#000000"
             android:text="회원가입"
             android:layout_width="wrap_content"
@@ -56,7 +56,7 @@
         android:layout_height="0dp">
 
         <LinearLayout
-            android:padding="20dp"
+            android:padding="15dp"
             android:paddingRight="20dp"
             android:orientation="vertical"
             android:id="@+id/lout_join_in_sv"
@@ -72,6 +72,7 @@
                 android:layout_height="wrap_content">
 
                 <TextView
+                    android:textColor="@color/black"
                     android:text="*아이디를 입력하세요"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
@@ -80,28 +81,30 @@
                     android:layout_marginBottom="15dp"
                     android:hint="6~16 영소문자, 숫자"
                     android:layout_width="match_parent"
-                    android:backgroundTint="@color/black"
+                    android:backgroundTint="@color/dark_gray_thick"
                     android:layout_height="58dp"/>
                 <TextView
+                    android:textColor="@color/black"
                     android:text="*비밀번호를 입력하세요"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
                 <EditText
                     android:layout_marginTop="5dp"
                     android:layout_marginBottom="15dp"
-                    android:hint="비밀번호를 입력하세요"
-                    android:backgroundTint="@color/black"
+                    android:hint="6~16 영소문자, 숫자, 특수문자"
+                    android:backgroundTint="@color/dark_gray_thick"
                     android:layout_width="match_parent"
                     android:layout_height="58dp"/>
                 <TextView
-                    android:text="*비밀번호를 확인하세요"
+                    android:textColor="@color/black"
+                    android:text="*비밀번호을 확인하세요"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
                 <EditText
                     android:layout_marginTop="5dp"
                     android:layout_marginBottom="15dp"
-                    android:hint="비밀번호를 입력하세요"
-                    android:backgroundTint="@color/black"
+                    android:hint="비밀번호를 다시 입력하세요"
+                    android:backgroundTint="@color/dark_gray_thick"
                     android:layout_width="match_parent"
                     android:layout_height="58dp"/>
 
@@ -116,36 +119,39 @@
                 android:layout_height="wrap_content">
 
                 <TextView
+                    android:textColor="@color/black"
                     android:text="*이름을 입력하세요"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
                 <EditText
                     android:layout_marginTop="5dp"
                     android:layout_marginBottom="15dp"
-                    android:backgroundTint="@color/black"
-                    android:hint="6~16 영소문자, 한글, 숫자, 특수문자"
+                    android:backgroundTint="@color/dark_gray_thick"
+                    android:hint="2~16 영소문자, 한글, 숫자, 특수문자"
                     android:layout_width="match_parent"
                     android:layout_height="58dp"/>
                 <TextView
-                    android:text="*비밀번호를 입력하세요"
+                    android:textColor="@color/black"
+                    android:text="*이메일을 입력하세요"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
                 <EditText
                     android:layout_marginTop="5dp"
                     android:layout_marginBottom="15dp"
-                    android:backgroundTint="@color/black"
-                    android:hint="비밀번호를 입력하세요"
+                    android:backgroundTint="@color/dark_gray_thick"
+                    android:hint="ex) toInterval@toInterval.com"
                     android:layout_width="match_parent"
                     android:layout_height="58dp"/>
                 <TextView
-                    android:text="*비밀번호를 확인하세요"
+                    android:textColor="@color/black"
+                    android:text=" 본인을 간단하게 소개해주세요"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
                 <EditText
                     android:layout_marginTop="5dp"
                     android:layout_marginBottom="15dp"
-                    android:backgroundTint="@color/black"
-                    android:hint="비밀번호를 입력하세요"
+                    android:backgroundTint="@color/dark_gray_thick"
+                    android:hint="Hello, World!"
                     android:layout_width="match_parent"
                     android:layout_height="58dp"/>
 
@@ -160,18 +166,13 @@
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintRight_toRightOf="parent"
-                    android:background="@drawable/btn_blue"
+                    android:background="@drawable/btn_black"
                     android:text="회원가입"
                     android:id="@+id/btn_join"
                     app:layout_constraintWidth_percent="0.8"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"/>
             </androidx.constraintlayout.widget.ConstraintLayout>
-
         </LinearLayout>
-
-
-
     </ScrollView>
-
 </androidx.constraintlayout.widget.ConstraintLayout>
