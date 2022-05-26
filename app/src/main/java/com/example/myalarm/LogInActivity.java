@@ -58,7 +58,7 @@ public class LogInActivity extends AppCompatActivity {
         btn_rememberId.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                btn_rememberId.setTextColor(Color.parseColor("##438AFF"));
+                btn_rememberId.setTextColor(Color.parseColor("#438AFF"));
             }
         });
 
