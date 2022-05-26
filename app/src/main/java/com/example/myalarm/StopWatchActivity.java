@@ -174,14 +174,14 @@ public class StopWatchActivity extends AppCompatActivity {
                 //Toast.makeText(StopWatchActivity.this, LatestInterval, Toast.LENGTH_SHORT).show();
                 String currentRecord = courseRecordList.substring(0, 8);
                 if(LatestInterval.equals(currentRecord)) {
-                    LatestInterval = "00:00:00";
+                    LatestInterval = "00:00.00";
                 }
 
-                st = new StringTokenizer(currentRecord, ":");
+                st = new StringTokenizer(currentRecord, ":.");
                 long CMM = Integer.parseInt(st.nextToken());
                 long CSS = Integer.parseInt(st.nextToken());
                 long CMS = Integer.parseInt(st.nextToken());
-                st = new StringTokenizer(LatestInterval, ":");
+                st = new StringTokenizer(LatestInterval, ":.");
                 long LMM = Integer.parseInt(st.nextToken());
                 long LSS = Integer.parseInt(st.nextToken());
                 long LMS = Integer.parseInt(st.nextToken());
@@ -196,13 +196,13 @@ public class StopWatchActivity extends AppCompatActivity {
                     DSS += 60;
                     DMM--;
                 }
-                String intervalRecord = String.format("%02d:%02d:%02d",DMM,DSS,DMS);
+                String intervalRecord = String.format("%02d:%02d.%02d",DMM,DSS,DMS);
                 tv_interval_record.setText(intervalRecord+"\n\n"+intervalRecordList);
                 break;
 
             case PAUSE:
                 //Toast.makeText(StopWatchActivity.this, "RESET", Toast.LENGTH_SHORT).show();
-                tv_stopwatch_viewer.setText("00:00:00");
+                tv_stopwatch_viewer.setText("00:00.00");
                 baseTime = 0;
                 pauseTime = 0;
                 cnt = 1;
@@ -228,7 +228,7 @@ public class StopWatchActivity extends AppCompatActivity {
         long m = overTime/1000/60;
         long s = (overTime/1000)%60;
         long ms = overTime % 100000 / 10 % 100;
-        String recTime = String.format("%02d:%02d:%02d",m,s,ms);
+        String recTime = String.format("%02d:%02d.%02d",m,s,ms);
         return recTime;
     }
 

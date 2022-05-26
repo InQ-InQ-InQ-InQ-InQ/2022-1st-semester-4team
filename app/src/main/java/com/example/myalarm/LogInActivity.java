@@ -40,6 +40,7 @@ public class LogInActivity extends AppCompatActivity {
                 }
                 Intent intent = new Intent(LogInActivity.this, StopWatchActivity.class);
                 startActivity(intent);
+                overridePendingTransition(0, 0);
             }
         });
 
@@ -48,6 +49,7 @@ public class LogInActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(LogInActivity.this, JoinActivity.class);
                 startActivity(intent);
+                overridePendingTransition(0, 0);
             }
         });
 

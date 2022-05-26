@@ -22,13 +22,13 @@
             android:layout_height="wrap_content">
 
             <Button
-                android:textColor="#000000"
-                android:background="#00FFFFFF"
                 android:id="@+id/btn_stopWatch_option"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:textSize="30dp"
-                android:text=":"/>
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/icon_menu"
+                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
         </LinearLayout>
 
@@ -43,7 +43,7 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:gravity="center"
-            android:text="00:00:00"
+            android:text="00:00.00"
             android:textSize="56dp"
             android:textColor="@color/black"
             android:textFontWeight="200"

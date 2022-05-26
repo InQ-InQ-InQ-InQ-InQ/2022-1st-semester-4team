@@ -8,24 +8,24 @@
         <entry key="..\:/Users/Desktop/AndroidStudioProjects/MyAlarm/app/src/main/res/drawable/btn_blue.xml" value="0.2645" />
         <entry key="..\:/Users/Desktop/AndroidStudioProjects/MyAlarm/app/src/main/res/drawable/btn_gray.xml" value="0.2645" />
         <entry key="..\:/Users/Desktop/AndroidStudioProjects/MyAlarm/app/src/main/res/drawable/btn_red.xml" value="0.2645" />
-        <entry key="..\:/Users/Desktop/AndroidStudioProjects/MyAlarm/app/src/main/res/drawable/edittext_gray.xml" value="0.2645" />
         <entry key="..\:/Users/Desktop/AndroidStudioProjects/MyAlarm/app/src/main/res/layout/activity_add_alarm.xml" value="0.33" />
         <entry key="..\:/Users/Desktop/AndroidStudioProjects/MyAlarm/app/src/main/res/layout/activity_alarm.xml" value="0.34739583333333335" />
-        <entry key="..\:/Users/Desktop/AndroidStudioProjects/MyAlarm/app/src/main/res/layout/activity_drawer.xml" value="0.25" />
         <entry key="..\:/Users/Desktop/AndroidStudioProjects/MyAlarm/app/src/main/res/layout/activity_join.xml" value="0.33" />
         <entry key="..\:/Users/Desktop/AndroidStudioProjects/MyAlarm/app/src/main/res/layout/activity_log_in.xml" value="0.2864583333333333" />
         <entry key="..\:/Users/Desktop/AndroidStudioProjects/MyAlarm/app/src/main/res/layout/activity_stop_watch.xml" value="0.25" />
         <entry key="..\:/Users/Desktop/AndroidStudioProjects/MyAlarm/app/src/main/res/layout/activity_timer_acticity.xml" value="0.2864583333333333" />
         <entry key="..\:/Users/Desktop/AndroidStudioProjects/MyAlarm/app/src/main/res/layout/menu_bar.xml" value="0.27291666666666664" />
-        <entry key="..\:/Users/Desktop/AndroidStudioProjects/MyAlarm/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1955" />
-        <entry key="..\:/Users/Desktop/AndroidStudioProjects/MyAlarm/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.2645" />
         <entry key="..\:/Users/njsha/AndroidStudioProjects/MyAlarm/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.177" />
         <entry key="..\:/Users/njsha/AndroidStudioProjects/MyAlarm/app/src/main/res/drawable/border_bottom_black.xml" value="0.177" />
         <entry key="..\:/Users/njsha/AndroidStudioProjects/MyAlarm/app/src/main/res/drawable/border_bottom_black_thin.xml" value="0.1805" />
+        <entry key="..\:/Users/njsha/AndroidStudioProjects/MyAlarm/app/src/main/res/drawable/border_bottom_gray_thin.xml" value="0.1845" />
+        <entry key="..\:/Users/njsha/AndroidStudioProjects/MyAlarm/app/src/main/res/drawable/btn_black.xml" value="0.1845" />
         <entry key="..\:/Users/njsha/AndroidStudioProjects/MyAlarm/app/src/main/res/drawable/btn_blue.xml" value="0.177" />
+        <entry key="..\:/Users/njsha/AndroidStudioProjects/MyAlarm/app/src/main/res/drawable/btn_gray.xml" value="0.1845" />
         <entry key="..\:/Users/njsha/AndroidStudioProjects/MyAlarm/app/src/main/res/drawable/edittext_gray.xml" value="0.177" />
         <entry key="..\:/Users/njsha/AndroidStudioProjects/MyAlarm/app/src/main/res/drawable/edittext_white.xml" value="0.177" />
         <entry key="..\:/Users/njsha/AndroidStudioProjects/MyAlarm/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2075" />
+        <entry key="..\:/Users/njsha/AndroidStudioProjects/MyAlarm/app/src/main/res/drawable/icon_menu.xml" value="0.1845" />
         <entry key="..\:/Users/njsha/AndroidStudioProjects/MyAlarm/app/src/main/res/layout/activity_add_alarm.xml" value="0.2" />
         <entry key="..\:/Users/njsha/AndroidStudioProjects/MyAlarm/app/src/main/res/layout/activity_alarm.xml" value="0.21481481481481482" />
         <entry key="..\:/Users/njsha/AndroidStudioProjects/MyAlarm/app/src/main/res/layout/activity_join.xml" value="0.2" />

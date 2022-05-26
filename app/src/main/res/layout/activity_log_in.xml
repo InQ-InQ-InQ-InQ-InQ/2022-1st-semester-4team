@@ -8,7 +8,7 @@
 
     <ImageView
 
-        android:src="@drawable/ic_myalarm"
+        android:src="@drawable/logo_tointerval_black_runningman"
         android:id="@+id/iv_login_image"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -25,10 +25,11 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintWidth_percent="0.75"
+        app:layout_constraintWidth_percent="0.8"
         android:orientation="vertical">
 
         <EditText
+            android:textSize="14dp"
             android:paddingLeft="15dp"
             android:background="@drawable/edittext_gray"
             android:layout_margin="10dp"
@@ -40,6 +41,7 @@
             android:textColorHint="#6E6E6E"/>
 
         <EditText
+            android:textSize="14dp"
             android:paddingLeft="15dp"
             android:background="@drawable/edittext_gray"
             android:layout_margin="10dp"
@@ -60,7 +62,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintWidth_percent="0.75">
+        app:layout_constraintWidth_percent="0.8">
 
         <Button
             android:id="@+id/btn_rememberId"
@@ -85,15 +87,15 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintWidth_percent="0.75">
+        app:layout_constraintWidth_percent="0.8">
 
         <Button
             android:textColor="#FFFFFF"
-            android:background="@drawable/btn_blue"
+            android:background="@drawable/btn_black"
             android:layout_margin="10dp"
             android:id="@+id/btn_signIn"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
             android:text="LOGIN"
             style="?android:attr/borderlessButtonStyle" />
     </LinearLayout>
@@ -108,7 +110,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="100dp"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintWidth_percent="0.75">
+        app:layout_constraintWidth_percent="0.8">
 
         <Button
             android:id="@+id/btn_signUp"
