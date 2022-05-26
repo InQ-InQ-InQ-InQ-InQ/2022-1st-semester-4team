@@ -41,6 +41,7 @@
             android:textColorHint="#6E6E6E"/>
 
         <EditText
+            android:inputType="textPassword"
             android:textSize="14dp"
             android:paddingLeft="15dp"
             android:background="@drawable/edittext_gray"
